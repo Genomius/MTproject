@@ -4,14 +4,16 @@
         <meta charset="utf-8">
         <title>{% block title %}{% endblock %}</title>
 
-        <link rel="stylesheet" href="/static/bootstrap-3.3.2-dist/css/bootstrap.css">
-        <link rel="stylesheet" href="/static/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/project/static/bootstrap-3.3.2-dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/project/static/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/project/static/style.css">
+
     </head>
-    <body>
+    <body style='text-align:center;padding-top:50px;' id='body'>
         {% block content %}{% endblock %}
 
-        <script src="/static/jquery-1.11.2.min.js"></script>
-        <script src="/static/script.js"></script>
+        <script src="/project/static/jquery-1.11.2.min.js"></script>
+        <script src="http://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
+        <script src="/project/static/script.js"></script>
     </body>
 </html>
