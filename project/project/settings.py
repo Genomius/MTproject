@@ -61,13 +61,9 @@ DATABASES = {
 }
 
 LANGUAGE_CODE = 'ru-ru'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 TEMPLATE_DIRS = (os.path.join(_PATH, 'templates/'),)
@@ -77,3 +73,5 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = '/home/den/work/MTproject/project/static/'
 STATIC_URL = '/static/'
+
+X_FRAME_OPTIONS = 'DENY'
