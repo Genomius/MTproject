@@ -5,6 +5,7 @@ _PATH = os.path.abspath(os.path.dirname(__file__) + "/../")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd%_x@m&ahtxl&x@)qoz)74)r#7@4bdvcw^qn%3x#0_dz&@^*#*'
+YANDEX_TRANSLATE_API_KEY = 'trnsl.1.1.20150701T183613Z.7961a75d9d964bba.d1db9465c0b2822671e24b4f88edefda66793225'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

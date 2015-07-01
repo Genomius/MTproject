@@ -1,7 +1,7 @@
 pid=
 
 cert = stunnel/stunnel.pem
-sslVersion = SSLv4
+sslVersion = SSLv3
 foreground = yes
 output = stunnel/stunnel.log
 

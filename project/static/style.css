@@ -1,0 +1,39 @@
+#user-name{
+    text-align: right;
+}
+
+#user-audio{
+    text-align: left;
+}
+
+#user-audio .audio-block{
+
+}
+
+#user-audio .audio-cd-icon{
+    font-size: 18px;
+    float: left;
+    margin: 0px !important;
+    cursor: default;
+}
+
+#user-audio .audio-name{
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#user-audio .audio-translate-btn{
+
+}
+
+#user-audio .audio-edit-btn{
+
+}
+
+#user-audio i{
+    padding: 0px;
+    cursor: pointer;
+    margin: 0px 10px 0px 0px;
+}
