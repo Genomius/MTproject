@@ -3,6 +3,30 @@ $( document ).ready(function() {
     var user_first_name;
     var user_last_name;
 
+    $.ajaxSetup({
+         beforeSend: function(xhr, settings) {
+             function getCookie(name) {
+                 var cookieValue = null;
+                 if (document.cookie && document.cookie != '') {
+                     var cookies = document.cookie.split(';');
+                     for (var i = 0; i < cookies.length; i++) {
+                         var cookie = jQuery.trim(cookies[i]);
+                         // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+             }
+             if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                 // Only send the token to relative URLs i.e. locally.
+                 xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+             }
+         }
+    });
+
     VK.init(function() {
         VK.api('users.get',{user_ids: user_id}, function(data) {
           if (data.response) {
@@ -42,7 +66,42 @@ $( document ).ready(function() {
         VK.api('audio.getLyrics',{lyrics_id: lyrics_id}, function(data) {
             if (data.response) {
                 var text = data.response['text'];
-                'https://translate.yandex.net/api/v1.5/tr/translate?key=' +  + '&lang=en-ru&text=To%20be,+or+not+to+be%3F&text=That+is+the+question.'
+                $.ajax({
+                    type: "POST",
+                    url: '/',
+                    dataType: 'json',
+                    data: {text: text},
+                    success: function (data) {
+                        if (data.russian) {
+                            alert(data.russian);
+                        }
+                        else if (data.error) {
+                            alert(data.error)
+                        }
+                        else {
+                            //console.log(data.result);
+                            alert(data.result.split('<text>текст=')[1].split('</text>')[0]);
+                        }
+
+                    },
+                    error: function (err) {
+                        console.log('translate-ajax-response-error: ' + err);
+                    }
+                });
+            }
+            else{
+                $.ajax({
+                    type: "POST",
+                    url: 'translate/',
+                    dataType: 'json',
+                    data: {text: '1'},
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (err) {
+                        console.log('translate-ajax-response-error: ' + err);
+                    }
+                });
             }
         });
     });
