@@ -38,16 +38,17 @@ def home(request):
             context_instance=RequestContext(request)
         )
 
-
-@ensure_csrf_cookie
-def translate(request):
-    if request.POST:
-        if request.is_ajax():
-            url = 'http://www.amalgama-lab.com/songs/r/rammstein/ich_will.html'
-            result = urllib2.urlopen(url).read()
-            print result
-            return JsonResponse({'result': result})
-        else:
-            return HttpResponseBadRequest({'error': 'is not ajax'})
-    else:
-        return HttpResponseBadRequest({'error': 'method is not POST'})
+#
+# @ensure_csrf_cookie
+# def translate(request):
+#     if request.POST:
+#         if request.is_ajax():
+#             domain = 'https://www.amalgama-lab.com/'
+#             page = html.parse(domain)
+#             #word_list = page.getroot().find_class('az_nav')
+#             #print word_list
+#             return JsonResponse({'result': 'c'})
+#         else:
+#             return HttpResponseBadRequest({'error': 'is not ajax'})
+#     else:
+#         return HttpResponseBadRequest({'error': 'method is not POST'})

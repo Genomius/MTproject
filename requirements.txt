@@ -1,2 +1,5 @@
 django==1.8
 simplejson
+urllib2
+lxml
+cssselect

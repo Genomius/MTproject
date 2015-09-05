@@ -7,6 +7,8 @@
 <li>http://habrahabr.ru/sandbox/43770/</li>
 <li>https://tech.yandex.com/translate/doc/dg/reference/translate-docpage/<li>
 <li>https://tech.yandex.ru/translate/doc/dg/reference/detect-docpage/</li>
+<li>http://stackoverflow.com/questions/6504810/how-to-install-lxml-on-ubuntu</li>
+<li>http://www.amalgama-lab.com/songs/</li>
 </ul>
 
 <p>Commands</p>
